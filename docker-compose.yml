@@ -1,0 +1,16 @@
+node:
+    image: node
+    volumes:
+    - ".:/var/www"
+    links:
+    - mongo
+    ports:
+    - "3000:3000"
+    tty: true
+    privileged: true
+
+mongo:
+    image: mongo
+    volumes:
+    - "data/:/var/lib/mysql"
+    privileged: true
